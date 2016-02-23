@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular Magic</title>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/clientapp.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <h1>Iota Angular!</h1>
+
+    <div ng-controller="IndexController">
+        <button ng-click="addPerson()">Add Person</button>
+
+        <div ng-repeat="person in people">
+            <div ng-if="person.name != 'Kris Szafranski'">
+                <p>{{person.name}}</p>
+                <p>{{person.position}}</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div>
+
+
+    </div>
+</body>
+</html>

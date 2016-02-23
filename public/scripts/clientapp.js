@@ -1,42 +1,50 @@
 var myApp = angular.module('myApp', []);
 
 myApp.controller('IndexController', ['$scope', function($scope) {
-    console.log('angular rocks!');
-
-    $scope.count = 0;
 
     $scope.kris = {
         name: 'Kris Szafranski',
         position: 'instructor',
-        location: 'Richfield'
+        location: 'Richfield',
+        rank: 4
     };
 
     $scope.casie = {
         name: 'Casie Lynch',
         position: 'TA',
-        location: 'Uptown'
+        location: 'Uptown',
+        rank: 2
     };
 
     $scope.antoinette = {
         name: 'Antoinette Smith',
         position: 'instructor',
-        location: 'Saint Paul'
+        location: 'Saint Paul',
+        rank: 3
     };
+
+    $scope.ryan = {
+        name: 'Ryan Mulchay',
+        position: 'instructor',
+        location: 'Minneapolis',
+        rank: 5
+    }
 
     $scope.people = [$scope.kris, $scope.casie, $scope.antoinette];
-
-    $scope.increment = function() {
-        $scope.count++;
-    };
 
     $scope.addPerson = function() {
         $scope.people.push(
             {
                 name: 'Scott',
                 position: 'Director of something',
-                location: 'Bloomington'
+                location: 'Bloomington',
+                rank: 1
             }
         );
+    }
+
+    $scope.getOrders = function(id) {
+        console.log(id);
     }
 
 }]);

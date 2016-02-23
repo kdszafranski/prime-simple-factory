@@ -4,6 +4,8 @@
     <title>Angular Magic</title>
     <script type="text/javascript" src="/vendors/angular.min.js"></script>
     <script type="text/javascript" src="/scripts/clientapp.js"></script>
+
+    <link rel="stylesheet" href="/styles/style.css" />
 </head>
 
 <body ng-app="myApp">
@@ -12,7 +14,7 @@
     <div ng-controller="IndexController">
         <button ng-click="addPerson()">Add Person</button>
 
-        <div ng-repeat="person in people | orderBy: 'rank' | limitTo: 3">
+        <div class="person" ng-repeat="person in people | orderBy: 'rank' | limitTo: 3">
             <p>Name: {{person.name}}</p>
             <p>Position: {{person.position}}</p>
             <p>Rank: {{person.rank}}</p>

@@ -4,22 +4,20 @@
     <title>Angular Magic</title>
     <script type="text/javascript" src="/vendors/angular.min.js"></script>
     <script type="text/javascript" src="/scripts/clientapp.js"></script>
+    <script type="text/javascript" src="/scripts/profileInfo.js"></script>
 
     <link rel="stylesheet" href="/styles/style.css" />
 </head>
 
 <body ng-app="myApp">
-    <h1>Iota Angular!</h1>
+    <div ng-include="'header.html'"></div>
 
     <div ng-controller="IndexController">
         <button ng-click="addPerson()">Add Person</button>
 
-        <div class="person" ng-repeat="person in people | orderBy: 'rank' | limitTo: 3">
-            <p>Name: {{person.name}}</p>
-            <p>Position: {{person.position}}</p>
-            <p>Rank: {{person.rank}}</p>
+        <div ng-repeat="person in people">
+            <profile-info-directive info="person"></profile-info-directive>
         </div>
     </div>
-
 </body>
 </html>

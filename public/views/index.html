@@ -1,23 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Angular Magic</title>
-    <script type="text/javascript" src="/vendors/angular.min.js"></script>
-    <script type="text/javascript" src="/scripts/clientapp.js"></script>
-    <script type="text/javascript" src="/scripts/profileInfo.js"></script>
-
-    <link rel="stylesheet" href="/styles/style.css" />
+    <title>Angular Routing Magic</title>
 </head>
 
-<body ng-app="myApp">
-    <div ng-include="'header.html'"></div>
+<body>
 
-    <div ng-controller="IndexController">
-        <button ng-click="addPerson()">Add Person</button>
-
-        <div ng-repeat="person in people">
-            <profile-info-directive info="person"></profile-info-directive>
-        </div>
-    </div>
 </body>
 </html>

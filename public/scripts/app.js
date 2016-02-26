@@ -5,11 +5,11 @@ myApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: '/views/templates/home.html',
-            controller: 'HomeController'
+            controller: 'PeopleController'
         })
-        .when('/another', {
-            templateUrl: '/views/templates/another.html',
-            controller: 'AnotherController'
+        .when('/addresses', {
+            templateUrl: '/views/templates/addresses.html',
+            controller: 'AddressController'
         })
         .otherwise({
             redirectTo: 'home'

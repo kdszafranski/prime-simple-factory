@@ -1,17 +1,13 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var dataRoute = require('./routes/data');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/data', function(req, res) {
-    res.send({message: 'hello'});
-});
+app.use('/data', dataRoute);
 
-app.post('/data/:number', function(req, res) {
-    res.send(req.params.number);
-});
 
 // Serve back static files
 app.use(express.static('public'));

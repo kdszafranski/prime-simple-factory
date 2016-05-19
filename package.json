@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server/app.js"
   },
   "author": "Kris",
   "license": "ISC",
@@ -16,5 +16,6 @@
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "pg": "^4.5.1"
-  }
+  },
+  "repository" : "https://github.com/kdszafranski/prime-angular-lectures/tree/factories"
 }

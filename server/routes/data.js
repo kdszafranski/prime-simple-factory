@@ -10,20 +10,20 @@ router.get('/', function(req, res) {
     pg.connect(connect, function(err, client, done) {
         var query = client.query('SELECT * FROM people');
 
-        // Stream results back one row at a time
-        query.on('row', function(row) {
-            results.push(row);
-        });
+          // Stream results back one row at a time
+          query.on('row', function(row) {
+              results.push(row);
+          });
 
-        // close connection
-        query.on('end', function() {
+          // close connection
+          query.on('end', function() {
             done();
-            return res.json(results);
-        });
+            res.json(results);
+          });
 
-        if(err) {
-            console.log(err);
-        }
+          if(err) {
+              console.log(err);
+          }
     });
 });
 

@@ -15,6 +15,8 @@ myApp.controller('PeopleController', ['$scope', 'DataFactory', function($scope, 
         $scope.people = $scope.dataFactory.peopleData();
     }
 
+    // Adds a person and then is visible, via the factory, to the Addresses page.
+    // Does not store in the DB
     $scope.addPerson = function() {
         $scope.dataFactory.addName($scope.formName);
         $scope.formName = '';

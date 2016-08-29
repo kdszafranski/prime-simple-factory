@@ -1,25 +1,31 @@
-myApp.controller('PeopleController', ['$scope', 'DataFactory', function($scope, DataFactory) {
-    console.log('People Controller');
+myApp.controller('PeopleController', ['$scope', 'exampleFactory', function($scope, exampleFactory) {
+  console.log('People Controller');
 
-    $scope.people = [];
-    $scope.dataFactory = DataFactory;
-    $scope.message = 'People!';
+  $scope.message = 'People!';
+  $scope.formName = '';
+  $scope.dataFactory = exampleFactory;
+  $scope.people = $scope.dataFactory.people;
+  $scope.number = $scope.dataFactory.number();
+
+  // Adds a person and then is visible, via the factory, to the Addresses page.
+  // Does not store in the DB
+  $scope.addPerson = function() {
+    // exampleFactory.people.push($scope.formName);
+    $scope.dataFactory.addPerson($scope.formName);
     $scope.formName = '';
+  }
 
-    if($scope.dataFactory.peopleData() === undefined) {
-        // initial load
-        $scope.dataFactory.retrieveData().then(function() {
-            $scope.people = $scope.dataFactory.peopleData();
-        });
-    } else {
-        $scope.people = $scope.dataFactory.peopleData();
-    }
+  $scope.addOne = function() {
+    $scope.number = $scope.dataFactory.addOne();
+  }
 
-    // Adds a person and then is visible, via the factory, to the Addresses page.
-    // Does not store in the DB
-    $scope.addPerson = function() {
-        $scope.dataFactory.addName($scope.formName);
-        $scope.formName = '';
-    }
+  // if($scope.dataFactory.peopleData() === undefined) {
+  //     // initial load
+  //     $scope.dataFactory.retrieveData().then(function() {
+  //         $scope.people = $scope.dataFactory.peopleData();
+  //     });
+  // } else {
+  //     $scope.people = $scope.dataFactory.peopleData();
+  // }
 
 }]);

@@ -3,27 +3,19 @@ var router = express.Router();
 var pg = require('pg');
 var connect = require('../modules/connection');
 
-
 router.get('/', function(req, res) {
-    var results = [];
-
     pg.connect(connect, function(err, client, done) {
-        var query = client.query('SELECT * FROM people');
+      client.query('SELECT * FROM people',
+      function(err, result) {
+        done();
 
-          // Stream results back one row at a time
-          query.on('row', function(row) {
-              results.push(row);
-          });
+        if(err) {
+          console.log("query error:", err);
+        }
 
-          // close connection
-          query.on('end', function() {
-            done();
-            res.json(results);
-          });
+        res.send(result.rows);
 
-          if(err) {
-              console.log(err);
-          }
+      });
     });
 });
 

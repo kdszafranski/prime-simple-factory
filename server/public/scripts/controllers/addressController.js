@@ -4,6 +4,7 @@ myApp.controller('AddressController', ['$scope', 'exampleFactory', function($sco
   $scope.dataFactory = exampleFactory;
   $scope.message = 'Addresses!';
   $scope.people = $scope.dataFactory.people;
+  $scope.recentName = $scope.dataFactory.thing;
 
   // if($scope.dataFactory.peopleData() === undefined) {
   //     // initial load

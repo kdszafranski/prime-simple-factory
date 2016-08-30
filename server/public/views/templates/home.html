@@ -13,18 +13,17 @@
         <input type="text" name="name" id="name" ng-model="formName" />
         <button class="btn btn-default" ng-click="addPerson()">Add Person</button>
     </form>
-    <p>Number: {{number}} <button ng-click="addOne()">Add One!</button></p>
-    <p>Thing: {{thing}}</p>
+
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <hr />
-      <ul>
-        <li ng-repeat="person in people track by $index">
-            <p>{{person}}</p>
-        </li>
-      </ul>
+        <ul>
+          <li ng-repeat="person in people">
+            {{person.name}}
+          </li>
+        </ul>
     </div>
 </div>

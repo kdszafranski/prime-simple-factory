@@ -21,13 +21,5 @@ myApp.controller('PeopleController', ['$scope', 'exampleFactory', function($scop
     $scope.number = $scope.dataFactory.addOne();
   }
 
-  // if($scope.dataFactory.peopleData() === undefined) {
-  //     // initial load
-  //     $scope.dataFactory.retrieveData().then(function() {
-  //         $scope.people = $scope.dataFactory.peopleData();
-  //     });
-  // } else {
-  //     $scope.people = $scope.dataFactory.peopleData();
-  // }
 
 }]);

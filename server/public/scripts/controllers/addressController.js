@@ -6,13 +6,4 @@ myApp.controller('AddressController', ['$scope', 'exampleFactory', function($sco
   $scope.people = $scope.dataFactory.people;
   $scope.recentName = $scope.dataFactory.thing;
 
-  // if($scope.dataFactory.peopleData() === undefined) {
-  //     // initial load
-  //     $scope.dataFactory.retrieveData().then(function() {
-  //         $scope.people = $scope.dataFactory.peopleData();
-  //     });
-  // } else {
-  //     $scope.people = $scope.dataFactory.peopleData();
-  // }
-
 }]);

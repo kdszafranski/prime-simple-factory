@@ -4,5 +4,6 @@ myApp.controller('AddressController', ['$scope', 'DataFactory', function($scope,
   $scope.message = 'Addresses!';
 
   $scope.people = DataFactory.peopleArray;
+  $scope.personCount = DataFactory.count();
 
 }]);

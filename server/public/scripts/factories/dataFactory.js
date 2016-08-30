@@ -4,6 +4,7 @@ myApp.factory('DataFactory', [function() {
   // Private
   var people = [];
   var recentPerson = {};
+  var count = 0;
 
   var addPerson = function(name) {
     var newPerson = {name: name};
@@ -13,11 +14,22 @@ myApp.factory('DataFactory', [function() {
     recentPerson.name = newPerson;
   }
 
+  var increment = function() {
+    count++;
+    console.log("factory count: ", count);
+    return count;
+  }
 
   // public API for access to our private data
   return {
     peopleArray: people,
     recentPerson: recentPerson,
+    count: function() {
+      return count;
+    },
+    addOne: function() {
+      return increment();
+    },
     addPerson: function(person) {
       addPerson(person);
     }

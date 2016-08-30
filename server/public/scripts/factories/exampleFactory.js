@@ -16,8 +16,7 @@ myApp.factory('exampleFactory', [function() {
     thing.name = name;
   }
 
-  // public API
-  // accessors (setters and getters)
+  // public API with accessors (setters and getters)
   return {
     people: people, // arrays and objects can be shared
     thing: thing,
